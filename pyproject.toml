@@ -3,13 +3,23 @@ name = "torch_niggli"
 version = "0.1.0"
 description = "Niggli reduction for PyTorch"
 authors = [{ name = "tony", email = "tony998244353@gmail.com" }]
-dependencies = []
+dependencies = [
+    "torch>=2.4.1",
+]
 readme = "README.md"
 requires-python = ">= 3.8"
 
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = [
+    "scikit-build-core>=0.17.0",
+    "setuptools>=42",
+    "wheel",
+    "cmake>=3.18",
+    "ninja",
+    "torch",
+    "pybind11",
+]
+build-backend = "scikit_build_core.build.api"
 
 [tool.rye]
 managed = true
