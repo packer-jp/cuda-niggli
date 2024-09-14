@@ -5,20 +5,8 @@
 #include <cuda_runtime.h>
 #include <vector>
 
-#define CheckError(call)                                           \
-    {                                                              \
-        const cudaError_t error = call;                            \
-        if (error != cudaSuccess) {                                \
-            fprintf(stderr, "Error: %s:%d, ", __FILE__, __LINE__); \
-            fprintf(stderr,                                        \
-                "code: %d, reason: %s\n",                          \
-                error,                                             \
-                cudaGetErrorString(error));                        \
-        }                                                          \
-    }
+__host__ __device__ float absDet(const float mat[9]);
 
-__host__ __device__ double absDet(const double mat[9]);
+__global__ void niggliReduceKernel(const float cell_src[][9], float cell_dst[][9], float tol, int num_iterations);
 
-__global__ void niggliReduceKernel(const double cell_src[][9], double cell_dst[][9], double tol, int num_iterations);
-
-std::vector<double> niggliReduce(const std::vector<double>& cell, double tol, int num_iterations);
+std::vector<float> niggliReduce(const std::vector<float>& cell, float tol, int num_iterations);

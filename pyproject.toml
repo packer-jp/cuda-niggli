@@ -1,8 +1,8 @@
 [project]
-name = "niggli_torch"
+name = "torch_niggli"
 version = "0.1.0"
-description = "Add your description here"
-authors = [{ name = "packer-jp", email = "tone0805develop@gmail.com" }]
+description = "Niggli reduction for PyTorch"
+authors = [{ name = "tony", email = "tony998244353@gmail.com" }]
 dependencies = []
 readme = "README.md"
 requires-python = ">= 3.8"
@@ -19,4 +19,4 @@ dev-dependencies = []
 allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/niggli_torch"]
+packages = ["src/torch_niggli"]
