@@ -23,8 +23,6 @@ target_link_libraries(test_niggli PRIVATE niggli)
 set_target_properties(test_niggli PROPERTIES
     CUDA_ARCHITECTURES ${CMAKE_CUDA_ARCHITECTURES}
 )
-message(STATUS "CMAKE_INSTALL_LIBDIR: ${CMAKE_INSTALL_LIBDIR}")
-message(STATUS "PROJECT_NAME: ${PROJECT_NAME}")
 
 if(USE_PYBIND)
     find_package(Torch REQUIRED)
