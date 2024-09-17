@@ -8,3 +8,5 @@
 #   with-sources: false
 
 -e file:.
+pybind11==2.13.6
+    # via torch-niggli

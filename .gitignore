@@ -1,9 +1,10 @@
 # Local execution
 run.sh
+torch_build.sh
 *.out
 *.err
 .d*
 build
-pybind11
 *.egg-info
 .venv
+dist
