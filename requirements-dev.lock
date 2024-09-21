@@ -8,15 +8,3 @@
 #   with-sources: false
 
 -e file:.
-build==1.2.2
-cmake==3.30.3
-packaging==24.1
-    # via build
-    # via scikit-build-core
-pathspec==0.12.1
-    # via scikit-build-core
-pybind11==2.13.6
-    # via torch-niggli
-pyproject-hooks==1.1.0
-    # via build
-scikit-build-core==0.10.6

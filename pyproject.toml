@@ -1,34 +1,19 @@
 [project]
-name = "torch_niggli"
+name = "torch-niggli"
 version = "0.1.0"
 description = "Niggli reduction for PyTorch"
 authors = [{ name = "tony", email = "tony998244353@gmail.com" }]
-dependencies = [
-    "pybind11>=2.13.6",
-]
+dependencies = ["torch"]
 readme = "README.md"
 requires-python = ">=3.11,<3.12"
 
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel",
-    "scikit-build-core[pyproject]>=0.5.1",
-    "pybind11",
-    "cmake",
-]
+requires = ["torch", "pybind11", "scikit-build-core"]
 build-backend = "scikit_build_core.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = [
-    "scikit-build-core>=0.10.6",
-    "cmake>=3.30.3",
-    "build>=1.2.2",
-]
+dev-dependencies = []
 
-[tool.hatch.metadata]
-allow-direct-references = true
-
-[tool.hatch.build.targets.wheel]
-packages = ["src/torch_niggli"]
+[tool.scikit-build]
+wheel.packages = ["src/torch_niggli"]
