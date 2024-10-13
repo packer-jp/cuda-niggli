@@ -12,7 +12,7 @@ torch::Tensor niggliReduceTorch(torch::Tensor cell, float tol = 1e-5, int num_it
 
     int num_cells = cell.size(0);
 
-    torch::Tensor result = torch::empty({num_cells, 3, 3}, torch::dtype(torch::kFloat).device(torch::kCUDA));
+    torch::Tensor result = torch::empty({num_cells, 3, 3}, torch::dtype(torch::kFloat).device(cell.device()));
 
     cudaDeviceSynchronize();
 
